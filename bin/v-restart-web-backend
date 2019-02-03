@@ -49,8 +49,11 @@ if [ -z "$WEB_BACKEND" ] || [ "$WEB_BACKEND" = 'remote' ]; then
     exit
 fi
 
+
+
 # Restart system
-php_fpm=$(ls /etc/init.d/php*-fpm* 2>/dev/null |cut -f 4 -d / |head -n 1)
+#php_fpm=$(ls /etc/init.d/php*-fpm* 2>/dev/null |cut -f 4 -d / |head -n 1)
+php_fpm=$(ls /etc/init.d/php*-fpm* 2>/dev/null |cut -f 4 -d /)
 if [ -z "$php_fpm" ]; then
     service $WEB_BACKEND restart >/dev/null 2>&1
 else
