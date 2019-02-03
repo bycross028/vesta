@@ -83,7 +83,7 @@ is_web_alias_new() {
 }
 
 # Prepare web backend
-prepare_web_backend() {
+#prepare_web_backend() {
     #pool=$(find -L /etc/php* -type d \( -name "pool.d" -o -name "*fpm.d" \))
     #if [ ! -e "$pool" ]; then
     #    check_result $E_NOTEXIST "php-fpm pool doesn't exist"
@@ -100,7 +100,7 @@ prepare_web_backend() {
     #        backend_lsnr="unix:$backend_lsnr"
     #    fi
     #fi
-}
+#}
 
 # Prepare web aliases
 prepare_web_aliases() {
@@ -143,9 +143,9 @@ prepare_web_domain_values() {
         sdocroot="$HOMEDIR/$user/web/$domain/public_shtml" ;
     fi
 
-    if [ ! -z "$WEB_BACKEND" ]; then
-        prepare_web_backend
-    fi
+    # if [ ! -z "$WEB_BACKEND" ]; then
+    #    prepare_web_backend
+    # fi
 
     server_alias=''
     alias_string=''
