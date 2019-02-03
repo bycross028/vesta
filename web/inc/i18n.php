@@ -56,7 +56,7 @@ function __() {
  * @param string Fallback language (default: 'en')
  * @return string Language code (such as 'en' and 'ja')
  */
-function detect_user_language($fallback='en') {
+function detect_user_language($fallback='es') {
     static $user_lang = '';
 
     // Already detected
