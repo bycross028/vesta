@@ -141,7 +141,7 @@ if (empty($_SESSION['language'])) {
         $_SESSION['language'] = $lang;
     }
     else {
-        $_SESSION['language'] = 'en';
+        $_SESSION['language'] = 'es';
     }
 }
 
