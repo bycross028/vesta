@@ -84,22 +84,22 @@ is_web_alias_new() {
 
 # Prepare web backend
 prepare_web_backend() {
-    pool=$(find -L /etc/php* -type d \( -name "pool.d" -o -name "*fpm.d" \))
-    if [ ! -e "$pool" ]; then
-        check_result $E_NOTEXIST "php-fpm pool doesn't exist"
-    fi
+    #pool=$(find -L /etc/php* -type d \( -name "pool.d" -o -name "*fpm.d" \))
+    #if [ ! -e "$pool" ]; then
+    #    check_result $E_NOTEXIST "php-fpm pool doesn't exist"
+    #fi
 
-    backend_type="$domain"
-    if [ "$WEB_BACKEND_POOL" = 'user' ]; then
-        backend_type="$user"
-    fi
-    if [ -e "$pool/$backend_type.conf" ]; then
-        backend_lsnr=$(grep "listen =" $pool/$backend_type.conf)
-        backend_lsnr=$(echo "$backend_lsnr" |cut -f 2 -d = |sed "s/ //")
-        if [ ! -z "$(echo $backend_lsnr |grep /)" ]; then
-            backend_lsnr="unix:$backend_lsnr"
-        fi
-    fi
+    #backend_type="$domain"
+    #if [ "$WEB_BACKEND_POOL" = 'user' ]; then
+    #    backend_type="$user"
+    #fi
+    #if [ -e "$pool/$backend_type.conf" ]; then
+    #    backend_lsnr=$(grep "listen =" $pool/$backend_type.conf)
+    #    backend_lsnr=$(echo "$backend_lsnr" |cut -f 2 -d = |sed "s/ //")
+    #    if [ ! -z "$(echo $backend_lsnr |grep /)" ]; then
+    #        backend_lsnr="unix:$backend_lsnr"
+    #    fi
+    #fi
 }
 
 # Prepare web aliases
